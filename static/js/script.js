@@ -16,14 +16,6 @@ se il numero inserito dall'utente è uguale del numero generato stampa in consol
 Il gioco finisce se l'utente esaurisce i 5 tentativi o se indovina
 */
 
-function sanitize(Var){
-    let sanificata
-    if (Var!=isNaN){
-        sanificata =  Var.trim().toLowerCase();
-    }
-    
-    return sanificata
-}
 
 function generateRandomInteger(min=1, max=100){
     const minCeiled = Math.ceil(min);
@@ -32,34 +24,48 @@ function generateRandomInteger(min=1, max=100){
     return num
 }
 
+function sanitize(Var){
+    let sanificata
+    if (!isNaN(Var)){
+        sanificata =  parseInt(Var.trim());
+    } else {
+        sanificata = NaN;
+    }
+    return sanificata
+}
 
 //PROGRAMMA PRINCIPALE
 let tentativi = 5
 let contatore = 0
 let indovinato = false
-let numEFFETIVO = 0
-let numeroInserito  = 0
-
-numEFFETIVO = parseInt(numEFFETIVO)
-numeroInserito = parseInt(numeroInserito)
-numEFFETIVO = generateRandomInteger()
-while (contatore<=5 && indovinato===false){
-    console.log("Benvenuto a 'INDOVINA IL NUMERO!'")
-    console.log("Hai ancora" + tentativi + " tentativi")
+let numEFFETIVO = generateRandomInteger()
+let numeroInserito 
+console.log("Benvenuto a 'INDOVINA IL NUMERO!'")
+while (contatore<5 && indovinato===false){
+    console.log("Hai ancora " + tentativi + " tentativi")
     do{
-        numeroInserito = prompt("Inserisci un numero")
-    }while(numeroInserito===isNaN===false)
+        let input = prompt("Inserisci un numero")
+        numeroInserito = sanitize(input)
+        if (isNaN(numeroInserito)) {
+            console.log("Inserisci un numero valido")
+        } else {
+            break;
+        }
+    }while(true)
 
-        if(numeroInserito>numEFFETIVO){
-            console.log("Troppo grande")
-            tentativi--
-            contatore++
-            }else if(numeroInserito<numEFFETIVO){
-                console.log("Troppo piccolo")
-                tentativi--
-                contatore++
-            }else if(numeroInserito===numEFFETIVO){
-                console.log("Bravo, hai vinto!")
-                indovinato=true
-            }
+    if(numeroInserito>numEFFETIVO){
+        console.log("Il numero '" + numeroInserito + "' è troppo grande")
+        tentativi-=1
+        contatore+=1
+    }else if(numeroInserito<numEFFETIVO){
+        console.log("Il numero '" + numeroInserito + "' è troppo piccolo")
+        tentativi-=1
+        contatore+=1
+    }else if(numeroInserito===numEFFETIVO){
+        console.log("Bravo, hai vinto!")
+        indovinato=true
+    }
+}
+if (!indovinato) {
+    console.log("Mi dispiace, hai perso. Il numero era " + numEFFETIVO);
 }

@@ -18,9 +18,7 @@ Il gioco finisce se l'utente esaurisce i 5 tentativi o se indovina
 
 
 function generateRandomInteger(min=1, max=100){
-    const minCeiled = Math.ceil(min);
-    const maxFloored = Math.floor(max);
-    num = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+    num = Math.floor(Math.random() * (max - min) + min);
     return num
 }
 

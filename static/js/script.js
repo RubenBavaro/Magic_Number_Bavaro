@@ -88,6 +88,7 @@ function handleClick(event) {
             elem2.innerHTML = `Hai ancora a dispozione <strong>${tentativi}</strong> tentativi.`
         } else if (numeroInserito === numEFFETIVO) {
             console.log("Bravo, hai vinto!");
+            win+=1;
             elem1.innerHTML = `Bravo, hai vinto! Hai usato <strong>${contatore+1}</strong> tentativi.`;
             elem2.innerHTML = `Il numero è effetivamente <strong>${numeroInserito}</strong>.`
             indovinato = true;
@@ -99,27 +100,75 @@ function handleClick(event) {
         console.log("Mi dispiace, hai perso. Il numero era " + numEFFETIVO);
         elem1.innerHTML = `Mi dispiace, hai perso.`;
         elem2.innerHTML = `Il numero era <strong>${numEFFETIVO}</strong>.`
-        document.querySelector("#guess").disabled = true;
-        document.querySelector("#guessBtn").disabled = true;
+        userField.disabled = true;
+        btn.disabled = true;
     }
 
+    if (tentativi > 3){
+        back.style.background = "#CCFFC5";
+    } else if (tentativi >= 1) {
+        back.style.background = "yellow";
+    } else if (tentativi === 0 && !indovinato) {
+        back.style.background = "#fa3232";
+    }  
+    if(indovinato){
+        back.style.background = "#a2e3f2";
+    }
 }
 
 
+function handleClick2(event) {
+    tentativi = 5
+    contatore = 0
+    indovinato = false;
+    back.style.background = "#CCFFC5";
+    userField.disabled = false;
+    btn.disabled = false;
+    numEFFETIVO = 0
+    numEFFETIVO = generateRandomInteger()
+    reset+=1
+    if (reset===1){
+        if(win===1){
+            elem3.innerHTML = `Hai resettato il gioco ${reset} volta. Hai vinto ${win} volta.`
+            elem1.innerHTML = `Non hai ancora inserito un numero.`;
+            elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+        }
+        elem3.innerHTML = `Hai resettato il gioco ${reset} volta. Non hai mai vinto il gioco.`
+        elem1.innerHTML = `Non hai ancora inserito un numero.`;
+        elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+    }else{
+        if(win>1){
+        elem3.innerHTML = `Hai resettato il gioco per un totale di ${reset} volte. Hai vinto ${win} volte.`
+        elem1.innerHTML = `Non hai ancora inserito un numero.`;
+        elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+        }else if(win===1){
+            elem3.innerHTML = `Hai resettato il gioco ${reset} volta. Hai vinto ${win} volta.`
+            elem1.innerHTML = `Non hai ancora inserito un numero.`;
+            elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+        }else
+        elem3.innerHTML = `Hai resettato il gioco per un totale di ${reset} volte. Non hai mai vinto il gioco.`
+        elem1.innerHTML = `Non hai ancora inserito un numero.`;
+        elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+    }
+}
 
 //PROGRAMMA PRINCIPALE
 console.log("Benvenuto a 'INDOVINA IL NUMERO!'");
+let win = 0
 let elem1 = document.querySelector("#message1")
 let elem2 = document.querySelector("#message2")
-
+let elem3 = document.querySelector("#message3")
+let back = document.querySelector("body")
 let numeroInserito
 let tentativi = 5
 let contatore = 0
 let indovinato = false
+let reset = 0
 let numEFFETIVO = generateRandomInteger()
 let userField = document.querySelector("#guess")
 let btn = document.querySelector("#guessBtn")
     btn.addEventListener("click", handleClick)
 
-
+let btn2 = document.querySelector("#clickRetry")
+    btn2.addEventListener("click", handleClick2)
 

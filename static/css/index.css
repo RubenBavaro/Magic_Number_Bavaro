@@ -26,6 +26,21 @@ ol,ul{
     color: #000000;
     border-style: hidden;
 }
+#clickRetry{
+    width: 548px;
+    height: 60px;
+    background: #249e73;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000 ; 
+    border-style: hidden;
+    margin-top: 100px;
+}
 
 #title{
     margin-left: 30px;
@@ -50,6 +65,15 @@ ol,ul{
     margin-top: 18px;
 }
 #message2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-top: 2px;
+}
+#message3{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;

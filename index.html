@@ -8,24 +8,38 @@
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
+    <div class="centro">
     <header>
-        <h1 id="title">Indovina Il numero</h1>
+        <h1 id="title">INDOVINA IL NUMERO</h1>
     </header>
     <div class="rules">
-        <p class="desc">
-            Devi indovinare il numero magico! Inserisci un numero e poi clicca start.
-        </p>
+            <ol>
+                <li>Il computer sceglierà segretamente un numero intero casuale tra 1 e 100.</li>
+                <li>Il tuo obiettivo è indovinare questo numero segreto nel minor numero di tentativi possibile.</li>
+                <li>Ad ogni tentativo, inserisci un numero e il computer ti darà un indizio:
+                </li>
+            </ol>
+            <ul>
+                <li>Se il tuo numero è troppo basso, ti dirà "Troppo basso, prova un numero più alto!"</li>
+                <li>Se il tuo numero è troppo alto, ti dirà "Troppo alto, prova un numero più basso!"</li>
+                <li>Se indovini il numero esatto, vincerai la partita!</li>
+            </ul>
+            <ol>
+                <li>Continua a fare tentativi finché non indovini il numero magico.</li>
+                <li>Alla fine del gioco, ti verrà mostrato il numero di tentativi che hai impiegato per indovinare.</li>
+                <li>Sfida te stesso a indovinare il numero con il minor numero di tentativi possibile!</li>
+            </ol> 
     </div>
 
-    
-
-    <div>
+        <p class="inter-uniquifier">Inserisci il numero magico</p>
         <form actions="" method="get">
             <input type="number" name="guess" id="guess" value="">
-            <input type="button" name="btn" id="guessBtn" value="Indovina">
+            <br>
+            <input type="button" name="btn" id="guessBtn" value="INDOVINA">
         </form>
-    </div>
-
-    <script type="text/javascript" src="static/js/script.js"></script>
+        <div id="message1">Non hai ancora inserito un numero.</div>
+        <div id="message2">Hai a disposizione 5 tentativi.</div>
+</div>
+<script type="text/javascript" src="static/js/script.js"></script>
 </body>
 </html>

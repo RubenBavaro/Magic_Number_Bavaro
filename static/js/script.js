@@ -69,19 +69,27 @@ function handleClick(event) {
 
     if (isNaN(numeroInserito)) {
         console.log("Inserisci un numero valido");
+        elem1.innerHTML = `Non hai inserito nessun numero!`;
+        elem2.innerHTML = `Inserisci un numero valido.`
     } else {
         if (numeroInserito > numEFFETIVO) {
             console.log("Il numero '" + numeroInserito + "' è troppo grande");
             tentativi -= 1;
             contatore += 1;
             console.log("Hai ancora " + tentativi + " tentativi");
+            elem1.innerHTML = `Il numero <strong>${numeroInserito}</strong> è troppo grande!`;
+            elem2.innerHTML = `Hai ancora a dispozione <strong>${tentativi}</strong> tentativi.`
         } else if (numeroInserito < numEFFETIVO) {
             console.log("Il numero '" + numeroInserito + "' è troppo piccolo");
             tentativi -= 1;
             contatore += 1;
             console.log("Hai ancora " + tentativi + " tentativi");
+            elem1.innerHTML = `Il numero <strong>${numeroInserito}</strong> è troppo piccolo!`;
+            elem2.innerHTML = `Hai ancora a dispozione <strong>${tentativi}</strong> tentativi.`
         } else if (numeroInserito === numEFFETIVO) {
             console.log("Bravo, hai vinto!");
+            elem1.innerHTML = `Bravo, hai vinto! Hai usato <strong>${contatore+1}</strong> tentativi.`;
+            elem2.innerHTML = `Il numero è effetivamente <strong>${numeroInserito}</strong>.`
             indovinato = true;
             document.querySelector("#guess").disabled = true;
             document.querySelector("#guessBtn").disabled = true;
@@ -89,6 +97,8 @@ function handleClick(event) {
     }
     if (tentativi === 0 && !indovinato) {
         console.log("Mi dispiace, hai perso. Il numero era " + numEFFETIVO);
+        elem1.innerHTML = `Mi dispiace, hai perso.`;
+        elem2.innerHTML = `Il numero era <strong>${numEFFETIVO}</strong>.`
         document.querySelector("#guess").disabled = true;
         document.querySelector("#guessBtn").disabled = true;
     }
@@ -99,6 +109,9 @@ function handleClick(event) {
 
 //PROGRAMMA PRINCIPALE
 console.log("Benvenuto a 'INDOVINA IL NUMERO!'");
+let elem1 = document.querySelector("#message1")
+let elem2 = document.querySelector("#message2")
+
 let numeroInserito
 let tentativi = 5
 let contatore = 0

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .merriweather-light {
     font-family: "Merriweather", serif;
     font-weight: 300;
@@ -48,3 +48,15 @@
     font-style: italic;
   }
   
+
+
+.inter-uniquifier {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  font-weight: auto;
+  font-style: normal;
+  margin-left: -157px;
+  margin-bottom: 1px;
+}
+

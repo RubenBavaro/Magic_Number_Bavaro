@@ -1,20 +1,64 @@
 @import "commons.css";
-
+@import "centro.css";
+@import "rules.css";
+ol,ul{
+    margin-bottom: 0px;
+}
 #guess{
     width: 350px;
-    background-color: pink;
+    height: 60px;
+    background-color: white;
+    margin-bottom: 18px;
+    border-style: hidden;
+    border-radius: 5px;
 }
+#guessBtn{
+    width: 350px;
+    height: 60px;
+    background: #3AE3A8;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    border-style: hidden;
+}
+
 #title{
-    padding-top: 5%;
-    padding-bottom: 30px;
-    color: blue;
-    text-align: center;
-    text-shadow: yellow;
-
+    margin-left: 30px;
+    margin-top: 144px;
+    margin-bottom: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#message1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-top: 18px;
+}
+#message2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-top: 2px;
 }
 
-.desc{
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+body{
+    background-color: #CCFFC5;
 }
-

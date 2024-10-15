@@ -142,7 +142,7 @@ function handleClick2(event) {
         elem1.innerHTML = `Non hai ancora inserito un numero.`;
         elem2.innerHTML = `Hai a disposizione 5 tentativi.`
         }else if(win===1){
-            elem3.innerHTML = `Hai resettato il gioco ${reset} volta. Hai vinto ${win} volta.`
+            elem3.innerHTML = `Hai resettato il gioco per un totale di ${reset} volte. Hai vinto ${win} volta.`
             elem1.innerHTML = `Non hai ancora inserito un numero.`;
             elem2.innerHTML = `Hai a disposizione 5 tentativi.`
         }else

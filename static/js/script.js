@@ -132,23 +132,28 @@ function handleClick2(event) {
             elem3.innerHTML = `Hai resettato il gioco ${reset} volta. Hai vinto ${win} volta.`
             elem1.innerHTML = `Non hai ancora inserito un numero.`;
             elem2.innerHTML = `Hai a disposizione 5 tentativi.`
-        }
+            userField.value =  "";
+        }else
         elem3.innerHTML = `Hai resettato il gioco ${reset} volta. Non hai mai vinto il gioco.`
         elem1.innerHTML = `Non hai ancora inserito un numero.`;
         elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+        userField.value =  "";
     }else{
         if(win>1){
         elem3.innerHTML = `Hai resettato il gioco per un totale di ${reset} volte. Hai vinto ${win} volte.`
         elem1.innerHTML = `Non hai ancora inserito un numero.`;
         elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+        userField.value =  "";
         }else if(win===1){
             elem3.innerHTML = `Hai resettato il gioco per un totale di ${reset} volte. Hai vinto ${win} volta.`
             elem1.innerHTML = `Non hai ancora inserito un numero.`;
             elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+            userField.value =  "";
         }else
         elem3.innerHTML = `Hai resettato il gioco per un totale di ${reset} volte. Non hai mai vinto il gioco.`
         elem1.innerHTML = `Non hai ancora inserito un numero.`;
         elem2.innerHTML = `Hai a disposizione 5 tentativi.`
+        userField.value =  "";
     }
 }
 

@@ -67,9 +67,9 @@ function handleClick(event) {
     let input = document.querySelector("#guess").value;
     numeroInserito = sanitize(input);
 
-    if (isNaN(numeroInserito)) {
+    if (isNaN(numeroInserito) || numeroInserito>100 || numeroInserito<0) {
         console.log("Inserisci un numero valido");
-        elem1.innerHTML = `Non hai inserito nessun numero!`;
+        elem1.innerHTML = `Il numero inserito non è valido!`;
         elem2.innerHTML = `Inserisci un numero valido.`
     } else {
         if (numeroInserito > numEFFETIVO) {

@@ -83,6 +83,24 @@ ol,ul{
     margin-top: 2px;
 }
 
-body{
+
+
+.greenBg{
     background-color: #CCFFC5;
+}
+
+.yellowBg{
+    background-color: yellow;
+}
+
+.redBg{
+    background-color: #fa3232;
+}
+
+.cyanBg{
+    background-color: #a2e3f2;
+}
+
+.transition{
+    transition: all 2s;
 }

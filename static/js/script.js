@@ -105,14 +105,18 @@ function handleClick(event) {
     }
 
     if (tentativi > 3){
-        back.style.background = "#CCFFC5";
+        back.classList.remove("greenBg");
+        back.classList.add("greenBg")
     } else if (tentativi >= 1) {
-        back.style.background = "yellow";
+        back.classList.remove("greenBg");
+        back.classList.add("yellowBg")
     } else if (tentativi === 0 && !indovinato) {
-        back.style.background = "#fa3232";
+        back.classList.remove("yellowBg");
+        back.classList.add("redBg")
     }  
     if(indovinato){
-        back.style.background = "#a2e3f2";
+        back.classList.remove("redBg");
+        back.classList.add("cyanBg")
     }
 }
 
@@ -121,7 +125,8 @@ function handleClick2(event) {
     tentativi = 5
     contatore = 0
     indovinato = false;
-    back.style.background = "#CCFFC5";
+    back.classList.remove("redBg",  "yellowBg", "greenBg", "cyanBg");
+    back.classList.add("greenBg")
     userField.disabled = false;
     btn.disabled = false;
     numEFFETIVO = 0
@@ -163,7 +168,7 @@ let win = 0
 let elem1 = document.querySelector("#message1")
 let elem2 = document.querySelector("#message2")
 let elem3 = document.querySelector("#message3")
-let back = document.querySelector("body")
+let back = document.querySelector("#bg")
 let numeroInserito
 let tentativi = 5
 let contatore = 0

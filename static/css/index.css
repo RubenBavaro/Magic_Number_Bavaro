@@ -71,9 +71,9 @@ ol,ul{
     font-size: 16px;
     line-height: 19px;
     color: #000000;
-    margin-top: 2px;
 }
 #message3{
+    display: flex;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
